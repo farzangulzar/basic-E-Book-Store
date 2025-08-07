@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeEbooks - Your Digital Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-book-open"></i>
+                    <span>FreeEbooks</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#categories" class="nav-link">Categories</a>
+                    <a href="#popular" class="nav-link">Popular</a>
+                    <a href="#about" class="nav-link">About</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Discover Thousands of Free E-Books</h1>
+                <p>From programming to poetry, business to shayari - find your next read</p>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search books by title, author, or category...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="categories">
+            <h2>Browse by Category</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="programming">
+                    <i class="fas fa-code"></i>
+                    <h3>Programming</h3>
+                    <p>Learn to code with the best resources</p>
+                </div>
+                <div class="category-card" data-category="shayari">
+                    <i class="fas fa-heart"></i>
+                    <h3>Shayari</h3>
+                    <p>Beautiful poetry and verses</p>
+                </div>
+                <div class="category-card" data-category="business">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Business</h3>
+                    <p>Entrepreneurship and management</p>
+                </div>
+                <div class="category-card" data-category="gk">
+                    <i class="fas fa-globe"></i>
+                    <h3>General Knowledge</h3>
+                    <p>Expand your knowledge base</p>
+                </div>
+                <div class="category-card" data-category="fiction">
+                    <i class="fas fa-book"></i>
+                    <h3>Fiction</h3>
+                    <p>Stories and novels</p>
+                </div>
+                <div class="category-card" data-category="science">
+                    <i class="fas fa-flask"></i>
+                    <h3>Science</h3>
+                    <p>Scientific discoveries and theories</p>
+                </div>
+                <div class="category-card" data-category="history">
+                    <i class="fas fa-landmark"></i>
+                    <h3>History</h3>
+                    <p>Learn from the past</p>
+                </div>
+                <div class="category-card" data-category="self-help">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Self-Help</h3>
+                    <p>Personal development guides</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Books Display Section -->
+        <section class="books-section">
+            <div class="section-header">
+                <h2 id="sectionTitle">All Books</h2>
+                <div class="filter-controls">
+                    <select id="sortSelect">
+                        <option value="title">Sort by Title</option>
+                        <option value="author">Sort by Author</option>
+                        <option value="date">Sort by Date</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+            </div>
+            <div id="booksContainer" class="books-grid">
+                <!-- Books will be dynamically loaded here -->
+            </div>
+            <div id="loadMore" class="load-more">
+                <button id="loadMoreBtn">Load More Books</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Book Reader Modal -->
+    <div id="readerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="reader-header">
+                <h3 id="readerTitle"></h3>
+                <p id="readerAuthor"></p>
+            </div>
+            <div class="reader-content">
+                <div id="bookContent" class="book-text"></div>
+            </div>
+            <div class="reader-controls">
+                <button id="prevPage"><i class="fas fa-chevron-left"></i> Previous</button>
+                <span id="pageInfo">Page 1 of 1</span>
+                <button id="nextPage">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FreeEbooks</h3>
+                <p>Your gateway to free knowledge and entertainment</p>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#programming">Programming</a></li>
+                    <li><a href="#shayari">Shayari</a></li>
+                    <li><a href="#business">Business</a></li>
+                    <li><a href="#gk">General Knowledge</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#help">Help Center</a></li>
+                    <li>
+                        <a href="mailto:farzangulzar7@gmail.com">Email: farzangulzar7@gmail.com</a><br/>
+                        <a href="https://instagram.com/farzan__gulzar" target="_blank" rel="noopener noreferrer">Instagram: farzan__gulzar</a>
+                    </li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FreeEbooks. All rights reserved.             @Farzan Gulzar</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
